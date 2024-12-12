@@ -76,52 +76,77 @@
             <label for="server">З якого Discord сервера Ви подаєте заявку:</label>
             <select id="server" name="server" required>
                 <option value="">Оберіть сервер</option>
-                <option value="server1">Сервер 1</option>
-                <option value="server2">Сервер 2</option>
-                <option value="server3">Сервер 3</option>
-                <option value="server4">Сервер 4</option>
-                <option value="server5">Сервер 5</option>
-                <option value="server6">Сервер 6</option>
+                <option value="server01">Сервер 01</option>
+                <option value="server02">Сервер 02</option>
+                <option value="server03">Сервер 03</option>
+                <option value="server04">Сервер 04</option>
+                <option value="server05">Сервер 05</option>
+                <option value="server06">Сервер 06</option>
             </select>
 
             <label for="teamPlayer">Чи вважаєте ви себе командним гравцем?</label>
             <textarea id="teamPlayer" name="teamPlayer" rows="2" required></textarea>
 
-            <button type="button" onclick="submitForm()">Відправити заявку</button>
-        </form>
-    </div>
+            <label for="adequacy">Наскільки ви оцінюєте свою адекватність? (1-10)</label>
+            <input type="range" id="adequacy" name="adequacy" min="1" max="10" required>
 
-    <script>
-        async function submitForm() {
-            const form = document.getElementById('applicationForm');
-            const formData = new FormData(form);
+            <label for="stress">Наскільки ви оцінюєте свою стресостійкість? (1-10)</label>
+            <input type="range" id="stress" name="stress" min="1" max="10" required>
 
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
+            <label for="learning">Наскільки швидко ви запам'ятовуєте/ознайомлюєтеся з новим матеріалом? (1-10)</label>
+            <input type="range" id="learning" name="learning" min="1" max="10" required>
 
-            try {
-                const response = await fetch('https://discord.com/api/webhooks/1228414526383456287/Fbm6rufxMWhWYBv8VyJkJacev4MhXqkEjdMTx78inVJWrkB0DXIw73fid7yJ9Og4DcUo', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        content: JSON.stringify(data, null, 2)
-                    })
-                });
+            <label for="moderatorExperience">Чи займали раніше посаду Moderator Discord? (Якщо так, вкажіть яку)</label>
+            <textarea id="moderatorExperience" name="moderatorExperience" rows="2"></textarea>
 
-                if (response.ok) {
-                    alert('Заявку відправлено успішно!');
-                    form.reset();
-                } else {
-                    alert('Сталася помилка при відправці заявки. Спробуйте ще раз.');
-                }
-            } catch (error) {
-                alert('Сталася помилка: ' + error.message);
-            }
-        }
-    </script>
-</body>
-</html>
+            <label for="bans">Чи були у Вас бани на Discord серверах Ukraine GTA? Якщо так, то за що саме?</label>
+            <textarea id="bans" name="bans" rows="2"></textarea>
+
+            <label for="training">Готові отримати ЧС - Moderator DS якщо не пройдете стажування протягом 10 днів?</label>
+            <select id="training" name="training" required>
+                <option value="">Оберіть</option>
+                <option value="yes">Так</option>
+                <option value="no">Ні</option>
+            </select>
+
+            <label for="reactionModAbuse">Як би ви відреагували, якщо інший модератор неправильно поводиться або зловживає своїми повноваженнями?</label>
+            <textarea id="reactionModAbuse" name="reactionModAbuse" rows="4" required></textarea>
+
+            <label for="reactionCriticism">Як ви відреагуєте, якщо учасник серверу висловлюється негативно щодо вас або вашої роботи?</label>
+            <textarea id="reactionCriticism" name="reactionCriticism" rows="4" required></textarea>
+
+            <label for="ruleViolation">Уявіть ситуацію: користувач порушує правила, але є вашим знайомим або другом. Як ви вчините?</label>
+            <textarea id="ruleViolation" name="ruleViolation" rows="4" required></textarea>
+
+            <label for="mistake">Уявіть, що ви помилилися в рішенні під час модерації і це викликало негативну реакцію від учасників. Як ви виправите ситуацію?</label>
+            <textarea id="mistake" name="mistake" rows="4" required></textarea>
+
+            <label for="spam">На сервері починається спам з рекламою сторонніх ресурсів. Які ваші дії для припинення цього явища?</label>
+            <textarea id="spam" name="spam" rows="4" required></textarea>
+
+            <label for="drugs">Ситуація: Один з членів клану починає обговорювати наркотичні речовини, що суперечить P.24. Як ви будете реагувати?</label>
+            <textarea id="drugs" name="drugs" rows="4" required></textarea>
+
+            <label for="fishing">Що потрібно, щоб почати рибалити? Як закинути вудку?</label>
+            <textarea id="fishing" name="fishing" rows="2" required></textarea>
+
+            <label for="adminQuestion">Гравець задає запитання: "Як стати адміністратором?" Ваша відповідь:</label>
+            <textarea id="adminQuestion" name="adminQuestion" rows="4" required></textarea>
+
+            <label for="blogger">Як стати блогером Ukraine GTA?</label>
+            <textarea id="blogger" name="blogger" rows="4" required></textarea>
+
+            <label for="microphone">Чи маєте ви мікрофон для виконання щоденної норми на посаді Moderator Discord в голосовому каналі?</label>
+            <select id="microphone" name="microphone" required>
+                <option value="">Оберіть</option>
+                <option value="yes">Так, маю мікрофон</option>
+                <option value="no">Ні, не маю мікрофона</option>
+            </select>
+
+            <label for="hours">Скільки годин можете приділяти посаді M.D.?</label>
+            <select id="hours" name="hours" required>
+                <option value="">Оберіть</option>
+                <option value="1">Не більше однієї години на день</option>
+                <option value="2">Пару годин на день</option>
+                <option value="3-4">Від 3-х до 4-х годин на день</option>
+               
