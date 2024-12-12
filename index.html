@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Заявка на Moderator Discord 06</title>
+    <title>Заявка на Модератора Discord</title>
     <style>
         body {
             margin: 0;
@@ -18,12 +18,14 @@
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
         }
 
         h1 {
             text-align: center;
+            color: #FFD700;
         }
 
         label {
@@ -44,36 +46,44 @@
             background-color: #4CAF50;
             color: white;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         button:hover {
             background-color: #45a049;
         }
+
+        input, textarea, select {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Заявка на Moderator Discord 06</h1>
+        <h1>Заявка на Модератора Discord</h1>
         <form id="applicationForm">
             <label for="email">Електронна адреса:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Ваш email" required>
 
-            <label for="name">Ваше прізвище, ім'я, по-батькові:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="age">Ваш вік:</label>
-            <input type="number" id="age" name="age" required>
-
-            <label for="traits">Назвіть позитивні 3 та 3 негативні риси Вашого характеру:</label>
-            <textarea id="traits" name="traits" rows="4" required></textarea>
-
-            <label for="telegram">Ваш Telegram:</label>
-            <input type="text" id="telegram" name="telegram" required>
+            <label for="name">Ваше прізвище та ім'я:</label>
+            <input type="text" id="name" name="name" placeholder="Ваше ПІБ" required>
 
             <label for="discord">Ваш Discord:</label>
-            <input type="text" id="discord" name="discord" required>
+            <input type="text" id="discord" name="discord" placeholder="Ваш Discord-нік" required>
 
-            <label for="server">З якого Discord сервера Ви подаєте заявку:</label>
+            <label for="age">Ваш вік:</label>
+            <input type="number" id="age" name="age" placeholder="Ваш вік" required>
+
+            <label for="experience">Ваш попередній досвід модерації:</label>
+            <textarea id="experience" name="experience" rows="4" placeholder="Опишіть свій досвід" required></textarea>
+
+            <label for="server">З якого Discord сервера подаєте заявку:</label>
             <select id="server" name="server" required>
                 <option value="">Оберіть сервер</option>
                 <option value="server01">Сервер 01</option>
@@ -84,68 +94,29 @@
                 <option value="server06">Сервер 06</option>
             </select>
 
-            <label for="teamPlayer">Чи вважаєте ви себе командним гравцем?</label>
-            <textarea id="teamPlayer" name="teamPlayer" rows="2" required></textarea>
-
             <label for="adequacy">Наскільки ви оцінюєте свою адекватність? (1-10)</label>
             <input type="range" id="adequacy" name="adequacy" min="1" max="10" required>
 
-            <label for="stress">Наскільки ви оцінюєте свою стресостійкість? (1-10)</label>
+            <label for="teamPlayer">Чи вважаєте себе командним гравцем? Якщо так, чому?</label>
+            <textarea id="teamPlayer" name="teamPlayer" rows="3" placeholder="Ваша відповідь" required></textarea>
+
+            <label for="stress">Наскільки ви стресостійкі? (1-10)</label>
             <input type="range" id="stress" name="stress" min="1" max="10" required>
 
-            <label for="learning">Наскільки швидко ви запам'ятовуєте/ознайомлюєтеся з новим матеріалом? (1-10)</label>
-            <input type="range" id="learning" name="learning" min="1" max="10" required>
+            <label for="reactionCriticism">Як ви відреагуєте на критику вашої роботи?</label>
+            <textarea id="reactionCriticism" name="reactionCriticism" rows="4" placeholder="Ваша відповідь" required></textarea>
 
-            <label for="moderatorExperience">Чи займали раніше посаду Moderator Discord? (Якщо так, вкажіть яку)</label>
-            <textarea id="moderatorExperience" name="moderatorExperience" rows="2"></textarea>
-
-            <label for="bans">Чи були у Вас бани на Discord серверах Ukraine GTA? Якщо так, то за що саме?</label>
-            <textarea id="bans" name="bans" rows="2"></textarea>
-
-            <label for="training">Готові отримати ЧС - Moderator DS якщо не пройдете стажування протягом 10 днів?</label>
-            <select id="training" name="training" required>
-                <option value="">Оберіть</option>
-                <option value="yes">Так</option>
-                <option value="no">Ні</option>
-            </select>
-
-            <label for="reactionModAbuse">Як би ви відреагували, якщо інший модератор неправильно поводиться або зловживає своїми повноваженнями?</label>
-            <textarea id="reactionModAbuse" name="reactionModAbuse" rows="4" required></textarea>
-
-            <label for="reactionCriticism">Як ви відреагуєте, якщо учасник серверу висловлюється негативно щодо вас або вашої роботи?</label>
-            <textarea id="reactionCriticism" name="reactionCriticism" rows="4" required></textarea>
-
-            <label for="ruleViolation">Уявіть ситуацію: користувач порушує правила, але є вашим знайомим або другом. Як ви вчините?</label>
-            <textarea id="ruleViolation" name="ruleViolation" rows="4" required></textarea>
-
-            <label for="mistake">Уявіть, що ви помилилися в рішенні під час модерації і це викликало негативну реакцію від учасників. Як ви виправите ситуацію?</label>
-            <textarea id="mistake" name="mistake" rows="4" required></textarea>
-
-            <label for="spam">На сервері починається спам з рекламою сторонніх ресурсів. Які ваші дії для припинення цього явища?</label>
-            <textarea id="spam" name="spam" rows="4" required></textarea>
-
-            <label for="drugs">Ситуація: Один з членів клану починає обговорювати наркотичні речовини, що суперечить P.24. Як ви будете реагувати?</label>
-            <textarea id="drugs" name="drugs" rows="4" required></textarea>
-
-            <label for="fishing">Що потрібно, щоб почати рибалити? Як закинути вудку?</label>
-            <textarea id="fishing" name="fishing" rows="2" required></textarea>
-
-            <label for="adminQuestion">Гравець задає запитання: "Як стати адміністратором?" Ваша відповідь:</label>
-            <textarea id="adminQuestion" name="adminQuestion" rows="4" required></textarea>
-
-            <label for="blogger">Як стати блогером Ukraine GTA?</label>
-            <textarea id="blogger" name="blogger" rows="4" required></textarea>
-
-            <label for="microphone">Чи маєте ви мікрофон для виконання щоденної норми на посаді Moderator Discord в голосовому каналі?</label>
-            <select id="microphone" name="microphone" required>
-                <option value="">Оберіть</option>
-                <option value="yes">Так, маю мікрофон</option>
-                <option value="no">Ні, не маю мікрофона</option>
-            </select>
-
-            <label for="hours">Скільки годин можете приділяти посаді M.D.?</label>
+            <label for="hours">Скільки годин на день ви можете приділяти модерації?</label>
             <select id="hours" name="hours" required>
                 <option value="">Оберіть</option>
-                <option value="1">Не більше однієї години на день</option>
-                <option value="2">Пару годин на день</option>
-                <option value="3-4">Від 3-х до 4-х годин на день</option>
+                <option value="1">Менше 1 години</option>
+                <option value="2">1-2 години</option>
+                <option value="3">2-4 години</option>
+                <option value="4+">Більше 4 годин</option>
+            </select>
+
+            <button type="submit">Відправити заявку</button>
+        </form>
+    </div>
+</body>
+</html>
